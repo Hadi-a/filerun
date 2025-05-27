@@ -1,0 +1,16 @@
+Steps:
+
+1. Copy docker compose file
+2. Create directries to mount volumes 
+
+        => mkdir /filerun /filerun/html /filerun/user-files /filerun/db
+
+3. Download zip file from filerun client portal.
+4. Upload and extract the zip content to this path " /filerun/html "
+5. Change the folder permissions to be writable by FileRun by the below cmd (to check and confirm permission you can use cmd ls -al)
+
+       => chown www-data:www-data -R /filerun/html/system/data 
+
+6. Now start the docker container by running this cmd 
+
+      => docker compose up -d
